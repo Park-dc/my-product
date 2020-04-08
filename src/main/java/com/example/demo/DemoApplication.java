@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import com.sun.javafx.fxml.BeanAdapter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
