@@ -16,14 +16,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.PostPersist;
 
-@Entity
+@Entity //데이터 베이스 의 테이블이 된다.
 public class Product {
     @Id @GeneratedValue
-    Long id;
+    Long id;  //무조전 아이디 필요
     String name;
     int stock;
 
-    @PostPersist
+    @PostPersist // 저장된 후에 작업 수행
     public void eventPublish(){
         ProductChanged productChanged = new ProductChanged();
         productChanged.setProductId(this.getId());
@@ -39,7 +39,8 @@ public class Product {
         }
         //System.out.println(json);
 
-        Processor processor = (Processor) DemoApplication.applicationContext.getBean(Processor.class);
+        //Autowired 로 가져올수 없다.  lifecycle이 다르다....
+        Processor processor = DemoApplication.applicationContext.getBean(Processor.class);
         MessageChannel outputChannel = processor.output();
 
         outputChannel.send(MessageBuilder

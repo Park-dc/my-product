@@ -58,6 +58,7 @@
 
 	</dependencies>
 
+	<!-- kafka 의 version 스펙정의-->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>

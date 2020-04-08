@@ -10,7 +10,7 @@ import org.springframework.context.ApplicationContext;
 
 
 @SpringBootApplication
-@EnableBinding(Processor.class)
+@EnableBinding(Processor.class)  // 스트임 바인딩
 public class DemoApplication {
 
 	public static ApplicationContext applicationContext;

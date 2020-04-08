@@ -1,5 +1,6 @@
 package com.example.demo;
 
+//이벤트 생성
 public class ProductChanged {
     String eventType;
     Long productId;
